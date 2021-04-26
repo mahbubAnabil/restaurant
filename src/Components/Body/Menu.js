@@ -40,9 +40,8 @@ class Menu extends Component {
 
         let dishDetail = null;
         if (this.state.selectedDish != null) {
-            const comments = this.state.comments.filter(comment => {
-                return comment.distId === this.selectedDish.id;
-            })
+            const comments = this.state.comments.filter(comment => comment.dishId === this.state.selectedDish.id
+            )
             dishDetail = <DishDetail dish={this.state.selectedDish} comments={comments} />
         }
         return (
